@@ -3,14 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/alcoholicCocktails/src/main/res/layout/fragment_product_detail.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/alcoholicCocktails/src/main/res/layout/fragment_product_list.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/alcoholicCocktails/src/main/res/layout/item_product.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/nonAlcoholicCocktails/src/main/res/layout/fragment_non_alcoholic_detail.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/nonAlcoholicCocktails/src/main/res/layout/fragment_non_alcoholic_list.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/nonAlcoholicCocktails/src/main/res/layout/fragment_product_detail.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/nonAlcoholicCocktails/src/main/res/layout/fragment_product_list.xml" value="0.2" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/activity_main.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/fragment_choose.xml" value="0.21851851851851853" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/fragment_non_alcoholic.xml" value="0.225" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/fragment_product_detail.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/fragment_product_list.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/item_error.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/item_loading.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/item_loading_row.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/layout/item_product.xml" value="0.21851851851851853" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Cocktail/presentation/src/main/res/menu/bottom_navigation_menu.xml" value="0.225" />
       </map>
     </option>
   </component>

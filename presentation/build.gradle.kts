@@ -7,6 +7,7 @@ plugins {
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
+    id("kotlin-android")
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
 
     //dependency injection
     implementation(Depends.Libraries.hilt_android)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Depends.Libraries.hilt_android_compiler)
     kapt(Depends.Libraries.hilt_compiler)
     implementation(Depends.Libraries.java_inject)
@@ -100,4 +102,6 @@ dependencies {
     androidTestImplementation(Depends.Libraries.espresso_core)
 
     implementation(project(":domain"))
+    implementation(project(":presentation:alcoholicCocktails"))
+    implementation(project(":presentation:nonAlcoholicCocktails"))
 }

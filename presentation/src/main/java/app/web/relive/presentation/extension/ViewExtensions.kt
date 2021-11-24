@@ -8,7 +8,6 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat.startPostponedEnterTransition
 import app.web.relive.presentation.R
-import app.web.relive.presentation.base.util.GlideApp
 import app.web.relive.presentation.exception.ReactiveClickException
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -44,39 +43,6 @@ fun ImageView.load(
         placeholder(safePlaceholderDrawable)
         error(safePlaceholderDrawable)
     }
-    val glideRequest = GlideApp
-        .with(context)
-        .setDefaultRequestOptions(requestOptions)
-        .load(url)
-        .dontAnimate()
-
-    activity?.let {
-        glideRequest
-            .listener(object : RequestListener<Drawable> {
-                override fun onLoadFailed(
-                    e: GlideException?,
-                    model: Any?,
-                    target: Target<Drawable>?,
-                    isFirstResource: Boolean,
-                ): Boolean {
-                    startPostponedEnterTransition(it)
-                    return false
-                }
-
-                override fun onResourceReady(
-                    resource: Drawable,
-                    model: Any,
-                    target: Target<Drawable>,
-                    dataSource: DataSource,
-                    isFirstResource: Boolean,
-                ): Boolean {
-                    startPostponedEnterTransition(it)
-                    return false
-                }
-            })
-    }
-
-    glideRequest.into(this)
 }
 
 fun View.setOnReactiveClickListener(windowDuration: Long = 500, action: (() -> Unit)?): Disposable =

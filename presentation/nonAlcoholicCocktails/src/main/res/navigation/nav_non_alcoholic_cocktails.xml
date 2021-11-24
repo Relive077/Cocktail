@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_non_alcoholic_cocktails"
+    app:startDestination="@id/nonAlcoholicListFragment">
+
+    <fragment
+        android:id="@+id/nonAlcoholicListFragment"
+        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicList.NonAlcoholicListFragment"
+        tools:layout="@layout/fragment_non_alcoholic_list">
+
+        <action
+            android:id="@+id/navigateToNonAlcoholicDetailFragment"
+            app:destination="@id/nonAlcoholicDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nonAlcoholicDetailFragment"
+        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicdetail.NonAlcoholicDetailFragment"
+        tools:layout="@layout/fragment_non_alcoholic_detail">
+
+    </fragment>
+
+</navigation>

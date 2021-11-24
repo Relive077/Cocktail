@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import app.web.relive.domain.extension.allowReads
 import app.web.relive.presentation.R
 import app.web.relive.presentation.base.preference.Settings
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private val binding by viewInflateBinding(ActivityMainBinding::inflate)
     private val navController: NavController by lazy {
-        findNavController(R.id.activityMainChooseHostFragment)
+        findNavController(R.id.fragment_nav_host)
     }
     private var uiStateJob: Job? = null
 
@@ -36,24 +38,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupUI()
+        setupNavigation()
     }
 
-    override fun onSupportNavigateUp() = navController.navigateUp()
+    private fun setupNavigation() {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_nav_host) as NavHostFragment
+        binding.btmNavMain.setupWithNavController(navHostFragment.navController)
+        changeBottomNavigationFragment()
+    }
+
+    private fun changeBottomNavigationFragment() {
+        binding.btmNavMain.setOnNavigationItemSelectedListener {
+            if (binding.btmNavMain.menu.findItem(it.itemId).isChecked) {
+                false
+            } else {
+                when (it.itemId) {
+                    R.id.nav_non_alcoholic_cocktails -> {
+                        navController.navigate(R.id.nav_non_alcoholic_cocktails)
+                        true
+                    }
+                    R.id.nav_alcoholic_cocktails -> {
+                        navController.navigate(R.id.nav_alcoholic_cocktails)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 
     override fun onStop() {
         uiStateJob?.cancel()
         super.onStop()
-    }
-
-    override fun onBackPressed() {
-        if (isTaskRoot
-            && supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.backStackEntryCount == 0
-            && supportFragmentManager.backStackEntryCount == 0
-        ) {
-            finishAfterTransition()
-        } else {
-            super.onBackPressed()
-        }
     }
 
     override fun onDestroy() {

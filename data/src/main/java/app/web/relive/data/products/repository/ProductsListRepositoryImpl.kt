@@ -4,7 +4,6 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import app.web.relive.data.products.datasource.ProductsDbPagingSourceByCoroutine
-import app.web.relive.data.products.datasource.ProductsPagingSourceByCoroutine
 import app.web.relive.domain.extension.allowReads
 import app.web.relive.domain.products.entity.Drink
 import app.web.relive.domain.products.repository.ProductsListRepository

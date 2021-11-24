@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_alcoholic_cocktails"
+    app:startDestination="@id/alcoholicCocktailListFragment">
+
+    <fragment
+        android:id="@+id/alcoholicCocktailListFragment"
+        android:name="app.web.relive.presentation.alcoholiccocktails.products.alcoholicCocktailList.AlcoholicCocktailListFragment"
+        tools:layout="@layout/fragment_alcoholic_cocktail_list">
+
+        <action
+            android:id="@+id/navigateToAlcoholicCocktailDetailFragment"
+            app:destination="@id/alcoholicCocktailDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/alcoholicCocktailDetailFragment"
+        android:name="app.web.relive.presentation.alcoholiccocktails.products.productdetail.AlcoholicCocktailDetailFragment"
+        tools:layout="@layout/fragment_alcoholic_cocktail_detail">
+
+        <argument
+            android:name="productDetailDrinkUI"
+            app:argType="app.web.relive.presentation.alcoholiccocktails.products.entity.DrinkUI" />
+
+    </fragment>
+
+</navigation>

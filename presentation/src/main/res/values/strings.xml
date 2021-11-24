@@ -7,4 +7,6 @@
     <string name="abv">ABV: %1$s</string>
     <string name="rxjava">RxJava</string>
     <string name="coroutine">Coroutine</string>
+    <string name="non_alcoholic">Non Alcoholic</string>
+    <string name="alcoholic">Alcoholic</string>
 </resources>
