@@ -6,17 +6,6 @@
     app:startDestination="@id/productsListFragment">
 
     <fragment
-        android:id="@+id/chooseFragment"
-        android:name="app.web.relive.presentation.products.choose.ChooseFragment"
-        tools:layout="@layout/fragment_choose">
-
-        <action
-            android:id="@+id/navigateToProductsListFragment"
-            app:destination="@id/productsListFragment" />
-
-    </fragment>
-
-    <fragment
         android:id="@+id/productsListFragment"
         android:name="app.web.relive.presentation.products.productlist.ProductsListFragment"
         tools:layout="@layout/fragment_product_list">
@@ -24,11 +13,6 @@
         <action
             android:id="@+id/navigateToProductDetailFragment"
             app:destination="@id/productDetailFragment" />
-
-        <!--<argument
-            android:name="choosePathType"
-            android:defaultValue="RX"
-            app:argType="app.web.drjackycv.presentation.products.choose.ChoosePathType" />-->
 
     </fragment>
 
@@ -38,8 +22,8 @@
         tools:layout="@layout/fragment_product_detail">
 
         <argument
-            android:name="productDetailBeerUI"
-            app:argType="app.web.relive.presentation.products.entity.BeerUI" />
+            android:name="productDetailDrinkUI"
+            app:argType="app.web.relive.presentation.products.entity.DrinkUI" />
 
     </fragment>
 

@@ -10,10 +10,10 @@ import app.web.relive.presentation.base.adapter.Cell
 import app.web.relive.presentation.base.adapter.RecyclerItem
 import app.web.relive.presentation.databinding.ItemProductBinding
 
-object BeerCell : Cell<RecyclerItem, ViewBinding> {
+object DrinkCell : Cell<RecyclerItem, ViewBinding> {
 
     override fun belongsTo(item: RecyclerItem?): Boolean {
-        return item is BeerUI
+        return item is DrinkUI
     }
 
     override fun type(): Int {
@@ -25,7 +25,7 @@ object BeerCell : Cell<RecyclerItem, ViewBinding> {
     }
 
     override fun holder(parent: ViewGroup): RecyclerView.ViewHolder {
-        return BeerViewHolder(binding(parent))
+        return DrinkViewHolder(binding(parent))
     }
 
     override fun bind(
@@ -33,7 +33,7 @@ object BeerCell : Cell<RecyclerItem, ViewBinding> {
         item: RecyclerItem?,
         onItemClick: ((RecyclerItem, View) -> Unit)?
     ) {
-        if (holder is BeerViewHolder && item is BeerUI) {
+        if (holder is DrinkViewHolder && item is DrinkUI) {
             holder.bind(item)
             holder.itemView.setOnClickListener {
                 onItemClick?.run {

@@ -19,7 +19,7 @@ import app.web.relive.presentation.base.adapter.RecyclerItem
 import app.web.relive.presentation.databinding.FragmentProductListBinding
 import app.web.relive.presentation.extension.*
 import app.web.relive.presentation.products.choose.ChoosePathType
-import app.web.relive.presentation.products.entity.BeerUI
+import app.web.relive.presentation.products.entity.DrinkUI
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialElevationScale
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +32,6 @@ class ProductsListFragment : Fragment(R.layout.fragment_product_list) {
         cleanUp(it)
     }
     private val productsListViewModel: ProductsListViewModel by viewModels()
-    private var path = ChoosePathType.RX
 
     private val productsListAdapter: ProductsListAdapter by lazy {
         ProductsListAdapter(::navigateToProductDetail)
@@ -49,10 +48,15 @@ class ProductsListFragment : Fragment(R.layout.fragment_product_list) {
     }
 
     private fun setupPath() {
-//        val safeArgs: ProductsListFragmentArgs by navArgs()
-//        path = safeArgs.choosePathType
-//        Timber.d("Which path: $path")
-        setupViewBaseOnPath()
+        productsListViewModel.run {
+            productsListByCoroutine.collectIn(viewLifecycleOwner) {
+                addProductsList(it)
+            }
+
+            failure.collectIn(viewLifecycleOwner) {
+                handleFailure(it)
+            }
+        }
     }
 
     private fun setupRecycler() {
@@ -65,41 +69,6 @@ class ProductsListFragment : Fragment(R.layout.fragment_product_list) {
         //productListRecyclerView.itemAnimator = null
         postponeEnterTransition()
         view?.doOnPreDraw { startPostponedEnterTransition() }
-    }
-
-    private fun setupViewBaseOnPath() {
-        when (path) {
-            ChoosePathType.RX -> {
-                setupView()
-            }
-            ChoosePathType.COROUTINE -> {
-                setupViewByCoroutine()
-            }
-        }
-    }
-
-    private fun setupView() {
-        productsListViewModel.run {
-
-            viewLifecycleOwner.observe(ldProductsList, ::addProductsList)
-
-            failure.collectIn(viewLifecycleOwner) {
-                handleFailure(it)
-            }
-
-        }
-    }
-
-    private fun setupViewByCoroutine() {
-        productsListViewModel.run {
-            productsListByCoroutine.collectIn(viewLifecycleOwner) {
-                addProductsList(it)
-            }
-
-            failure.collectIn(viewLifecycleOwner) {
-                handleFailure(it)
-            }
-        }
     }
 
     private fun addProductsList(productsList: PagingData<RecyclerItem>) {
@@ -134,11 +103,11 @@ class ProductsListFragment : Fragment(R.layout.fragment_product_list) {
     }
 
     private fun navigateToProductDetail(item: RecyclerItem, view: View) {
-        val itemUI = item as BeerUI
+        val itemUI = item as DrinkUI
         val action =
             ProductsListFragmentDirections.navigateToProductDetailFragment(itemUI)
         val extras = FragmentNavigatorExtras(
-            view to itemUI.id.toString()
+            view to itemUI.idDrink.toString()
         )
         exitTransition = Hold().apply {
             duration = resources.getInteger(R.integer.motion_duration_large).toLong()

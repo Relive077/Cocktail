@@ -2,10 +2,10 @@ package app.web.relive.data.products.datasource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import app.web.relive.data.products.entity.BeerMapper
+import app.web.relive.data.products.entity.DrinkMapper
 import app.web.relive.data.products.remote.ProductsApi
 import app.web.relive.domain.base.Failure
-import app.web.relive.domain.products.entity.Beer
+import app.web.relive.domain.products.entity.Drink
 import io.reactivex.rxjava3.annotations.NonNull
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -20,16 +20,16 @@ private const val STARTING_PAGE_INDEX = 1
 class ProductsPagingSourceByCoroutine @Inject constructor(
     private val productsApi: ProductsApi,
     //private val query: String
-) : PagingSource<Int, Beer>() {
+) : PagingSource<Int, Drink>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Beer> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Drink> {
         val position = params.key ?: STARTING_PAGE_INDEX
         //val apiQuery = query
 
         return try {
-            val response = productsApi.getBeersListByCoroutine(position)
+            val response = productsApi.fetchDrinks("Alcoholic").drinks
                 .map {
-                    BeerMapper().mapLeftToRight(it)
+                    DrinkMapper().mapLeftToRight(it)
                 }
 
             toLoadResult(response, position)
@@ -56,12 +56,12 @@ class ProductsPagingSourceByCoroutine @Inject constructor(
 
     override val jumpingSupported = true
 
-    override fun getRefreshKey(state: PagingState<Int, Beer>): Int? = state.anchorPosition
+    override fun getRefreshKey(state: PagingState<Int, Drink>): Int? = state.anchorPosition
 
     private fun toLoadResult(
-        @NonNull response: List<Beer>,
+        @NonNull response: List<Drink>,
         position: Int,
-    ): LoadResult<Int, Beer> {
+    ): LoadResult<Int, Drink> {
         return LoadResult.Page(
             data = response,
             prevKey = if (position == STARTING_PAGE_INDEX) null else position - 1,

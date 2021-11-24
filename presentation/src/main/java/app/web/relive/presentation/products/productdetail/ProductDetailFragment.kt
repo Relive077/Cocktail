@@ -25,17 +25,15 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
 
     private fun setupUI() {
         val safeArgs: ProductDetailFragmentArgs by navArgs()
-        val product = safeArgs.productDetailBeerUI
+        val product = safeArgs.productDetailDrinkUI
 
         setSharedElementTransitionOnEnter()
 
         with(product) {
             binding.productDetailIdTxv.text = id.toString()
-            binding.productDetailContainer.transitionName = id.toString()
-            binding.productDetailImv.load(url = imageUrl, activity = activity)
-            binding.productDetailNameTxv.text = name
-            binding.productDetailDescriptionTxv.text = getString(R.string.description, description)
-            binding.productDetailAbvTxv.text = getString(R.string.abv, abv.toString())
+            binding.productDetailContainer.transitionName = idDrink.toString()
+            binding.productDetailImv.load(url = strDrinkThumb, activity = activity)
+            binding.productDetailNameTxv.text = strDrink
         }
     }
 

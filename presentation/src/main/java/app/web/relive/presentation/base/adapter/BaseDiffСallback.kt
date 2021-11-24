@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 val BASE_DIFF_CALLBACK = object : DiffUtil.ItemCallback<RecyclerItem>() {
 
     override fun areItemsTheSame(oldItem: RecyclerItem, newItem: RecyclerItem): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.idDrink == newItem.idDrink
     }
 
     override fun areContentsTheSame(oldItem: RecyclerItem, newItem: RecyclerItem): Boolean {
