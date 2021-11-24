@@ -68,6 +68,11 @@ dependencies {
     implementation(Depends.Libraries.java_inject)
     //parser
     api(Depends.Libraries.converter_gson)
+    //room
+    implementation(Depends.Libraries.room_runtime)
+    implementation(Depends.Libraries.room_compiler)
+    implementation(Depends.Libraries.room_common)
+    implementation(Depends.Libraries.room_ktx)
     //network
     implementation(Depends.Libraries.retrofit)
     implementation(Depends.Libraries.retrofit_adapter_rx)

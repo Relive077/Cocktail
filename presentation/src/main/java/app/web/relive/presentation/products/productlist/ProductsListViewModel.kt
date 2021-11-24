@@ -9,7 +9,7 @@ import app.web.relive.domain.products.usecase.GetBeersListByCoroutineParams
 import app.web.relive.domain.products.usecase.GetBeersListByCoroutineUseCase
 import app.web.relive.presentation.base.adapter.RecyclerItem
 import app.web.relive.presentation.base.viewmodel.BaseViewModel
-import app.web.relive.presentation.products.entity.DrinkMapper
+import app.web.relive.presentation.products.entity.DrinkUIMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -40,7 +40,7 @@ class ProductsListViewModel @Inject constructor(
         viewModelScope.launch {
             _productsListByCoroutine.value = getProductsByCoroutinePath(ids).first()
                 .map { drink ->
-                    DrinkMapper().mapLeftToRight(drink)
+                    DrinkUIMapper().mapLeftToRight(drink)
                 }
         }
     }

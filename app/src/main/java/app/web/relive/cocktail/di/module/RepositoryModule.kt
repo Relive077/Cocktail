@@ -1,5 +1,6 @@
 package app.web.relive.cocktail.di.module
 
+import app.web.relive.data.products.datasource.ProductsDbPagingSourceByCoroutine
 import app.web.relive.data.products.datasource.ProductsPagingSourceByCoroutine
 import app.web.relive.data.products.repository.ProductsListRepositoryImpl
 import app.web.relive.domain.products.repository.ProductsListRepository
@@ -15,9 +16,9 @@ class RepositoryModule {
 
     @Provides
     @ViewModelScoped
-    fun productsList(
-        pagingSourceByCoroutine: ProductsPagingSourceByCoroutine
+    fun productsDbList(
+        pagingSourceDbByCoroutine: ProductsDbPagingSourceByCoroutine
     ): ProductsListRepository =
-        ProductsListRepositoryImpl(pagingSourceByCoroutine)
+        ProductsListRepositoryImpl(pagingSourceDbByCoroutine)
 
 }

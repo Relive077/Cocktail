@@ -18,7 +18,6 @@ class BaseRetrofit @Inject constructor(
 
     val retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
-        .addCallAdapterFactory(RxJavaCustomCallAdapterFactory.create()) //Has to be on top of the other adapters
         .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
         .client(okHttpClient)

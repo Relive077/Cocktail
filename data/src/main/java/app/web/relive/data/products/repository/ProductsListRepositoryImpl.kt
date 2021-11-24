@@ -3,6 +3,7 @@ package app.web.relive.data.products.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import app.web.relive.data.products.datasource.ProductsDbPagingSourceByCoroutine
 import app.web.relive.data.products.datasource.ProductsPagingSourceByCoroutine
 import app.web.relive.domain.extension.allowReads
 import app.web.relive.domain.products.entity.Drink
@@ -13,8 +14,10 @@ import javax.inject.Singleton
 
 @Singleton
 class ProductsListRepositoryImpl @Inject constructor(
-    private val pagingSourceByCoroutine: ProductsPagingSourceByCoroutine
+    private val pagingDbSourceByCoroutine: ProductsDbPagingSourceByCoroutine
 ) : ProductsListRepository {
+
+
 
     override fun fetchDrinks(): Flow<PagingData<Drink>> =
         allowReads {
@@ -27,7 +30,8 @@ class ProductsListRepositoryImpl @Inject constructor(
                     initialLoadSize = 10,
                     jumpThreshold = 60
                 ),
-                pagingSourceFactory = { pagingSourceByCoroutine }
+                pagingSourceFactory = { pagingDbSourceByCoroutine }
             ).flow
         }
+
 }

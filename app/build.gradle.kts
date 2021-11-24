@@ -91,6 +91,11 @@ dependencies {
     implementation(Depends.Libraries.retrofit)
     implementation(Depends.Libraries.retrofit_adapter_rx)
     implementation(Depends.Libraries.logging_interceptor)
+    //room
+    implementation(Depends.Libraries.room_runtime)
+    implementation(Depends.Libraries.room_compiler)
+    implementation(Depends.Libraries.room_common)
+    implementation(Depends.Libraries.room_ktx)
     //other
     implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)

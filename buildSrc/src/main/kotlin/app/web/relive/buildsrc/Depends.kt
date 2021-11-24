@@ -39,6 +39,7 @@ object Depends {
         const val glideVersion = "4.12.0"
         const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
+        const val roomVersion = "2.2.4"
 
         const val mockitoKotlinVersion = "2.2.0"
         const val mockitoCoreVersion = "3.11.2"
@@ -148,6 +149,10 @@ object Depends {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.chuckerVersion}"
         const val dataStore_preferences =
             "androidx.datastore:datastore-preferences:${Versions.dataStorePreferenceVersion}"
+        const val room_runtime = "androidx.room:room-runtime:${Versions.roomVersion}"
+        const val room_compiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+        const val room_common = "androidx.room:room-common:${Versions.roomVersion}"
+        const val room_ktx = "androidx.room:room-ktx:${Versions.roomVersion}"
     }
 
     object Environments {
