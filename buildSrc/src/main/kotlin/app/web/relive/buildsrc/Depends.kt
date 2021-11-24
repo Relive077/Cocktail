@@ -151,8 +151,8 @@ object Depends {
     }
 
     object Environments {
-        const val debugBaseUrl = "https://www.thecocktaildb.com/api/json/v1/"
-        const val releaseBaseUrl = "https://www.thecocktaildb.com/api/json/v1/"
+        const val debugBaseUrl = "https://api.punkapi.com/v2/"
+        const val releaseBaseUrl = "https://api.punkapi.com/v2/"
     }
 
     fun generateVersionName(): String {

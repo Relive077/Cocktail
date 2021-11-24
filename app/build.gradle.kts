@@ -101,4 +101,8 @@ dependencies {
     testImplementation(Depends.Libraries.junit)
     androidTestImplementation(Depends.Libraries.test_runner)
     androidTestImplementation(Depends.Libraries.espresso_core)
+
+    implementation(project(":presentation"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
 }

@@ -21,6 +21,7 @@ buildscript {
         classpath(app.web.relive.buildsrc.Depends.ClassPaths.navigation_safe_args_gradle_plugin)
         classpath(app.web.relive.buildsrc.Depends.ClassPaths.hilt_android_gradle_plugin)
         classpath(app.web.relive.buildsrc.Depends.ClassPaths.sonarqube_gradle_plugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0")
     }
 }
 
