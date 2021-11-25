@@ -22,7 +22,8 @@ Tech Stack Used:
  - Dark/Light Theme - Support dark/light themes
  - DataStore - Data storage solution that allows you to store key-value pairs or typed objects
 
-![NonAlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507393-7f6081f0-f0c1-4355-bd5e-927df84d516c.png)
-![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507399-9db780cb-bd97-4113-8513-fae00deda397.png)
-![NonAlcoholicCocktailDetailFragment](https://user-images.githubusercontent.com/87356177/143507401-ab2e491d-ac29-45d9-90af-274dec8e6cb9.png)
-![SavedCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507403-f7ab9d1e-96af-4081-9d2b-ad83b488aefc.png)
+
+![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507670-1029a013-ea6e-48c2-ae17-9e9b2ff3f41a.png)
+![NonAlcoholicCocktailDetailFragment](https://user-images.githubusercontent.com/87356177/143507674-b0970792-028a-462a-b77d-7d350b52fe6b.png)
+![NonAlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507677-98832be6-dc7b-490f-aff6-e712f8a85ae4.png)
+![SavedCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507678-a2eb1a92-21ea-4557-aa25-d57673a70a8f.png)
