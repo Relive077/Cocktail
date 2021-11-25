@@ -23,7 +23,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AlcoholicCocktailListViewModel @Inject constructor(
     private val getAlcoholicDrinkUseCase: GetAlcoholicDrinkUseCase,
-    private val alcoholicCocktailDao: AlcoholicCocktailDao,
     private val savedStateHandle: SavedStateHandle,
 ) : BaseViewModel() {
 
@@ -34,14 +33,6 @@ class AlcoholicCocktailListViewModel @Inject constructor(
 
     init {
         getProductsBaseOnPath("")
-    }
-
-    fun saveAlcoholicDrink(alcoholicDrinkUI: AlcoholicDrinkUI) {
-        viewModelScope.launch {
-            alcoholicCocktailDao.insertAlcoholicDrinkList(
-                AlcoholicDrinkUIToAlcoholicCocktailDbMapper().mapLeftToRight(alcoholicDrinkUI)
-            )
-        }
     }
 
     private fun getProductsByCoroutinePath(ids: String) =

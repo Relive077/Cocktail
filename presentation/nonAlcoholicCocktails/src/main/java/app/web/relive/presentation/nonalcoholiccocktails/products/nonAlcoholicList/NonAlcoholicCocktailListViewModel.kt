@@ -39,14 +39,6 @@ class NonAlcoholicCocktailListViewModel @Inject constructor(
         getProductsBaseOnPath("")
     }
 
-    fun saveNonAlcoholicDrink(nonAlcoholicDrinkUI: NonAlcoholicDrinkUI) {
-        viewModelScope.launch {
-            nonAlcoholicCocktailDao.insertNonAlcoholicDrinkList(
-                NonAlcoholicDrinkUIToNonAlcoholicCocktailDbMapper().mapLeftToRight(nonAlcoholicDrinkUI)
-            )
-        }
-    }
-
     private fun getProductsByCoroutinePath(ids: String) =
         getNonAlcoholicDrinkUseCase(GetNonAlcoholicDrinkParams(ids = ids))
             .cachedIn(viewModelScope)

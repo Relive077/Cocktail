@@ -25,7 +25,6 @@ class SavedNonAlcoholicCocktailListAdapter(private val mList: List<NonAlcoholicC
         val savedNonAlcoholicCocktail = mList[position]
         holder.drinkImage.load(savedNonAlcoholicCocktail.strDrinkThumb)
         holder.drinkName.text = savedNonAlcoholicCocktail.strDrink
-        holder.drinkId.text = savedNonAlcoholicCocktail.idDrink
     }
 
     override fun getItemCount(): Int {
@@ -35,6 +34,5 @@ class SavedNonAlcoholicCocktailListAdapter(private val mList: List<NonAlcoholicC
     class SavedNonAlcoholicCocktailViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val drinkImage: ImageView = itemView.findViewById(R.id.itemProductImv)
         val drinkName: TextView = itemView.findViewById(R.id.itemProductNameTxv)
-        val drinkId: TextView = itemView.findViewById(R.id.itemProductIdTxv)
     }
 }

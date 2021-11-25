@@ -2,6 +2,7 @@ package app.web.relive.cocktail.di.module
 
 import app.web.relive.data.products.datasource.AlcoholicPagingSource
 import app.web.relive.data.products.datasource.NonAlcoholicPagingSource
+import app.web.relive.data.products.remote.DrinkApi
 import app.web.relive.data.products.repository.DrinkListRepositoryImpl
 import app.web.relive.domain.products.repository.DrinkListRepository
 import dagger.Module
@@ -18,8 +19,9 @@ class RepositoryModule {
     @ViewModelScoped
     fun productsDbList(
         alcoholicPagingSource: AlcoholicPagingSource,
-        nonAlcoholicPagingSource: NonAlcoholicPagingSource
+        nonAlcoholicPagingSource: NonAlcoholicPagingSource,
+        drinkApi: DrinkApi
     ): DrinkListRepository =
-        DrinkListRepositoryImpl(alcoholicPagingSource,nonAlcoholicPagingSource)
+        DrinkListRepositoryImpl(alcoholicPagingSource,nonAlcoholicPagingSource,drinkApi)
 
 }

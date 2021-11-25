@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import app.web.relive.presentation.alcoholiccocktails.R
 import app.web.relive.presentation.alcoholiccocktails.databinding.FragmentAlcoholicCocktailDetailBinding
@@ -22,7 +23,7 @@ class AlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_alcoholic_coc
 
     private val binding by viewBinding(FragmentAlcoholicCocktailDetailBinding::bind)
 
-    private val productsListViewModel: AlcoholicCocktailListViewModel by viewModels()
+    private val productsDetailViewModel: AlcoholicCocktailDetailViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,8 +36,16 @@ class AlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_alcoholic_coc
             product.id, product.name,product.imageUrl)
 
         binding.saveFab.setOnClickListener {
-            productsListViewModel.saveAlcoholicDrink(alcoholicDrinkUI)
+            productsDetailViewModel.saveAlcoholicDrink(alcoholicDrinkUI)
         }
+
+        productsDetailViewModel.getAlcoholicDrinkDetails(product.id)
+
+        productsDetailViewModel.drinkDetails.observe(this, Observer {
+            binding.productDetailInstTxv.text = it.strInstructions
+            binding.productDetailTagsTxv.text = it.strTags
+        })
+
     }
 
     private fun setupUI() {
@@ -46,11 +55,12 @@ class AlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_alcoholic_coc
         setSharedElementTransitionOnEnter()
 
         with(product) {
-            binding.productDetailIdTxv.text = id.toString()
             binding.productDetailContainer.transitionName = id.toString()
             binding.productDetailImv.load(url = imageUrl, activity = activity)
             binding.productDetailNameTxv.text = name
         }
+
+
     }
 
     private fun setSharedElementTransitionOnEnter() {

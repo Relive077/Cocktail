@@ -40,6 +40,7 @@ object Depends {
         const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
         const val roomVersion = "2.2.4"
+        const val paletteVersion = "28.0.0"
 
         const val mockitoKotlinVersion = "2.2.0"
         const val mockitoCoreVersion = "3.11.2"
@@ -153,6 +154,7 @@ object Depends {
         const val room_compiler = "androidx.room:room-compiler:${Versions.roomVersion}"
         const val room_common = "androidx.room:room-common:${Versions.roomVersion}"
         const val room_ktx = "androidx.room:room-ktx:${Versions.roomVersion}"
+        const val palette_v7 = "com.android.support:palette-v7:${Versions.paletteVersion}"
     }
 
     object Environments {

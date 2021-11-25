@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import app.web.relive.presentation.alcoholiccocktails.extension.load
 import app.web.relive.presentation.nonalcoholiccocktails.R
@@ -23,7 +24,7 @@ class NonAlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_non_alcoho
 
     private val binding by viewBinding(FragmentNonAlcoholicDetailBinding::bind)
 
-    private val productsListViewModel: NonAlcoholicCocktailListViewModel by viewModels()
+    private val productsDetailViewModel: NonAlcoholicCocktailDetailsViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,8 +37,15 @@ class NonAlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_non_alcoho
             product.id, product.name,product.imageUrl)
 
         binding.saveFab.setOnClickListener {
-            productsListViewModel.saveNonAlcoholicDrink(nonAlcoholicDrinkUI)
+            productsDetailViewModel.saveNonAlcoholicDrink(nonAlcoholicDrinkUI)
         }
+
+        productsDetailViewModel.getNonAlcoholicDrinkDetails(product.id)
+
+        productsDetailViewModel.drinkDetails.observe(this, Observer {
+            binding.productDetailInstTxv.text = it.strInstructions
+            binding.productDetailTagsTxv.text = it.strTags
+        })
 
     }
 
@@ -48,7 +56,6 @@ class NonAlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_non_alcoho
         setSharedElementTransitionOnEnter()
 
         with(product) {
-            binding.productDetailIdTxv.text = id.toString()
             binding.productDetailContainer.transitionName = id.toString()
             binding.productDetailImv.load(url = imageUrl, activity = activity)
             binding.productDetailNameTxv.text = name
