@@ -103,6 +103,4 @@ dependencies {
 
     implementation(project(":domain"))
     implementation(project(":presentation:alcoholicCocktails"))
-    implementation(project(":presentation:nonAlcoholicCocktails"))
-    implementation(project(":presentation:savedCocktails"))
 }

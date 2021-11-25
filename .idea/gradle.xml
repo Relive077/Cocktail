@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/presentation" />
             <option value="$PROJECT_DIR$/presentation/alcoholicCocktails" />
             <option value="$PROJECT_DIR$/presentation/nonAlcoholicCocktails" />
+            <option value="$PROJECT_DIR$/presentation/savedCocktails" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

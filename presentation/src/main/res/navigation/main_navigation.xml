@@ -7,5 +7,6 @@
 
     <include app:graph="@navigation/nav_non_alcoholic_cocktails" />
     <include app:graph="@navigation/nav_alcoholic_cocktails" />
+    <include app:graph="@navigation/nav_saved_cocktails" />
 
 </navigation>

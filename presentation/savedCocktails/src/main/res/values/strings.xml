@@ -7,7 +7,6 @@
     <string name="abv">ABV: %1$s</string>
     <string name="rxjava">RxJava</string>
     <string name="coroutine">Coroutine</string>
-    <string name="non_alcoholic">Non Alcoholic</string>
-    <string name="alcoholic">Alcoholic</string>
-    <string name="saved">Saved</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -110,6 +110,7 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":presentation:alcoholicCocktails"))
     implementation(project(":presentation:nonAlcoholicCocktails"))
+    implementation(project(":presentation:savedCocktails"))
     implementation(project(":data"))
     implementation(project(":domain"))
 }

@@ -9,5 +9,9 @@
         android:id="@+id/nav_alcoholic_cocktails"
         android:icon="@drawable/ic_alcoholic"
         android:title="@string/alcoholic" />
+    <item
+        android:id="@+id/nav_saved_cocktails"
+        android:icon="@drawable/ic_saved"
+        android:title="@string/saved" />
 
 </menu>

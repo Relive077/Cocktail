@@ -61,6 +61,10 @@ class MainActivity : AppCompatActivity() {
                         navController.navigate(R.id.nav_alcoholic_cocktails)
                         true
                     }
+                    R.id.nav_saved_cocktails -> {
+                        navController.navigate(R.id.nav_saved_cocktails)
+                        true
+                    }
                     else -> false
                 }
             }
