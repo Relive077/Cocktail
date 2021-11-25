@@ -20,7 +20,7 @@ Cocktail is a fully kotlin written android app based on modularized MVVM design 
  - Kotlin DSL - Alternative syntax to the Groovy DSL
  - Detekt - Static code analysis for Kotlin
  - Gradle Doctor - Gradle build scan plugin
- - Navigation - Navigate through the app
+ - Navigation - Navigate through the app (including nested navigation graphs)
  - LeakCanary - Memory leak detection
  - Chucker - An HTTP inspector for Android & OkHTTP
  - StrictMode - A developer tool which detects things you might be doing by accident
