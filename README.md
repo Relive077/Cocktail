@@ -1,5 +1,9 @@
 Cocktail is a fully kotlin written android app based on modularized MVVM design architecture.
 
+**Data Source:**
+
+[The Cocktail DB](https://www.thecocktaildb.com/api.php)
+
 **Tech Stack Used:**
 
  - Coroutines - A concurrency design pattern library
