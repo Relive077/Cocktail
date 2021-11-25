@@ -21,3 +21,8 @@ Tech Stack Used:
  - StrictMode - A developer tool which detects things you might be doing by accident
  - Dark/Light Theme - Support dark/light themes
  - DataStore - Data storage solution that allows you to store key-value pairs or typed objects
+
+![NonAlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507393-7f6081f0-f0c1-4355-bd5e-927df84d516c.png)
+![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507399-9db780cb-bd97-4113-8513-fae00deda397.png)
+![NonAlcoholicCocktailDetailFragment](https://user-images.githubusercontent.com/87356177/143507401-ab2e491d-ac29-45d9-90af-274dec8e6cb9.png)
+![SavedCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507403-f7ab9d1e-96af-4081-9d2b-ad83b488aefc.png)
