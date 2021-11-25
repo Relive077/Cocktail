@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nonAlcoholicListFragment"
-        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicList.NonAlcoholicListFragment"
+        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicList.NonAlcoholicCocktailListFragment"
         tools:layout="@layout/fragment_non_alcoholic_list">
 
         <action
@@ -18,8 +18,13 @@
 
     <fragment
         android:id="@+id/nonAlcoholicDetailFragment"
-        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicdetail.NonAlcoholicDetailFragment"
+        android:name="app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicdetail.NonAlcoholicCocktailDetailFragment"
         tools:layout="@layout/fragment_non_alcoholic_detail">
+
+        <argument
+            android:name="productDetailDrinkUI"
+            app:argType="app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkUI" />
+
 
     </fragment>
 

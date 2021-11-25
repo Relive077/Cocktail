@@ -3,10 +3,7 @@ package app.web.relive.data.products.datasource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import app.web.relive.data.products.entity.DrinkMapper
-import app.web.relive.data.products.local.DrinkDao
-import app.web.relive.data.products.local.DrinkDbToDrinkMapper
-import app.web.relive.data.products.local.DrinkResponseToDrinkDbMapper
-import app.web.relive.data.products.remote.ProductsApi
+import app.web.relive.data.products.remote.DrinkApi
 import app.web.relive.domain.base.Failure
 import app.web.relive.domain.products.entity.Drink
 import io.reactivex.rxjava3.annotations.NonNull
@@ -16,13 +13,11 @@ import java.util.concurrent.TimeoutException
 import javax.inject.Inject
 import javax.inject.Singleton
 
-
 private const val STARTING_PAGE_INDEX = 1
 
 @Singleton
-class ProductsDbPagingSourceByCoroutine @Inject constructor(
-    private val productsApi: ProductsApi,
-    private val drinkDao: DrinkDao
+class NonAlcoholicPagingSource @Inject constructor(
+    private val drinkApi: DrinkApi,
     //private val query: String
 ) : PagingSource<Int, Drink>() {
 
@@ -31,17 +26,11 @@ class ProductsDbPagingSourceByCoroutine @Inject constructor(
         //val apiQuery = query
 
         return try {
-            val response = productsApi.fetchDrinks("Alcoholic").drinks
-
-            drinkDao.insertDrinkList(response.map {
-                DrinkResponseToDrinkDbMapper().mapLeftToRight(it)
-            })
-
-            val dbResponse = drinkDao.getDrinkList().map {
-                DrinkDbToDrinkMapper().mapLeftToRight(it)
+            val response = drinkApi.fetchDrinks("Non_Alcoholic").drinks
+                .map { DrinkMapper().mapLeftToRight(it)
             }
             
-            toLoadResult(dbResponse, position)
+            toLoadResult(response, position)
         } catch (e: Exception) {
             when (e) {
                 is UnknownHostException, is SocketTimeoutException -> {

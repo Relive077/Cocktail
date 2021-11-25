@@ -1,8 +1,9 @@
 package app.web.relive.cocktail.di.module
 
-import app.web.relive.data.products.datasource.ProductsDbPagingSourceByCoroutine
-import app.web.relive.data.products.repository.ProductsListRepositoryImpl
-import app.web.relive.domain.products.repository.ProductsListRepository
+import app.web.relive.data.products.datasource.AlcoholicPagingSource
+import app.web.relive.data.products.datasource.NonAlcoholicPagingSource
+import app.web.relive.data.products.repository.DrinkListRepositoryImpl
+import app.web.relive.domain.products.repository.DrinkListRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,8 +17,9 @@ class RepositoryModule {
     @Provides
     @ViewModelScoped
     fun productsDbList(
-        pagingSourceDbByCoroutine: ProductsDbPagingSourceByCoroutine
-    ): ProductsListRepository =
-        ProductsListRepositoryImpl(pagingSourceDbByCoroutine)
+        alcoholicPagingSource: AlcoholicPagingSource,
+        nonAlcoholicPagingSource: NonAlcoholicPagingSource
+    ): DrinkListRepository =
+        DrinkListRepositoryImpl(alcoholicPagingSource,nonAlcoholicPagingSource)
 
 }

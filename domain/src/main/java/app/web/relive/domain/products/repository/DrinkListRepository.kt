@@ -5,8 +5,10 @@ import app.web.relive.domain.products.entity.Drink
 import io.reactivex.rxjava3.core.Flowable
 import kotlinx.coroutines.flow.Flow
 
-interface ProductsListRepository {
+interface DrinkListRepository {
 
-    fun fetchDrinks(): Flow<PagingData<Drink>>
+    fun fetchAlcoholicDrinks(): Flow<PagingData<Drink>>
+
+    fun fetchNonAlcoholicDrinks(): Flow<PagingData<Drink>>
 
 }

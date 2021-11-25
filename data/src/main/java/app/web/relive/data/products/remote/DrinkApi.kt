@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ProductsApi : BaseApiService {
+interface DrinkApi : BaseApiService {
 
     @GET("/api/json/v1/1/filter.php")
     suspend fun fetchDrinks(

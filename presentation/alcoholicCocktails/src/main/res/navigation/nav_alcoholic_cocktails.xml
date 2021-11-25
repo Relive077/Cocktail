@@ -18,12 +18,12 @@
 
     <fragment
         android:id="@+id/alcoholicCocktailDetailFragment"
-        android:name="app.web.relive.presentation.alcoholiccocktails.products.productdetail.AlcoholicCocktailDetailFragment"
+        android:name="app.web.relive.presentation.alcoholiccocktails.products.alcoholicCocktaildetail.AlcoholicCocktailDetailFragment"
         tools:layout="@layout/fragment_alcoholic_cocktail_detail">
 
         <argument
             android:name="productDetailDrinkUI"
-            app:argType="app.web.relive.presentation.alcoholiccocktails.products.entity.DrinkUI" />
+            app:argType="app.web.relive.presentation.alcoholiccocktails.products.entity.AlcoholicDrinkUI" />
 
     </fragment>
 

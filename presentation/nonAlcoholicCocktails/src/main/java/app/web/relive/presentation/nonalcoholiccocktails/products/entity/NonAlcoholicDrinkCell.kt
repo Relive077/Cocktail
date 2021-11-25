@@ -1,19 +1,19 @@
-package app.web.relive.presentation.alcoholiccocktails.products.entity
+package app.web.relive.presentation.nonalcoholiccocktails.products.entity
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import app.web.relive.presentation.alcoholiccocktails.R
+import app.web.relive.presentation.nonalcoholiccocktails.R
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.Cell
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.RecyclerItem
 import app.web.relive.presentation.alcoholiccocktails.databinding.ItemProductBinding
 
-object DrinkCell : Cell<RecyclerItem, ViewBinding> {
+object NonAlcoholicDrinkCell : Cell<RecyclerItem, ViewBinding> {
 
     override fun belongsTo(item: RecyclerItem?): Boolean {
-        return item is DrinkUI
+        return item is NonAlcoholicDrinkUI
     }
 
     override fun type(): Int {
@@ -25,7 +25,7 @@ object DrinkCell : Cell<RecyclerItem, ViewBinding> {
     }
 
     override fun holder(parent: ViewGroup): RecyclerView.ViewHolder {
-        return DrinkViewHolder(binding(parent))
+        return NonAlcoholicDrinkViewHolder(binding(parent))
     }
 
     override fun bind(
@@ -33,7 +33,7 @@ object DrinkCell : Cell<RecyclerItem, ViewBinding> {
         item: RecyclerItem?,
         onItemClick: ((RecyclerItem, View) -> Unit)?
     ) {
-        if (holder is DrinkViewHolder && item is DrinkUI) {
+        if (holder is NonAlcoholicDrinkViewHolder && item is NonAlcoholicDrinkUI) {
             holder.bind(item)
             holder.itemView.setOnClickListener {
                 onItemClick?.run {

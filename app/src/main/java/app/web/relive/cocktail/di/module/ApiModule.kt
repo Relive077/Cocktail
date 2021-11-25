@@ -1,6 +1,6 @@
 package app.web.relive.cocktail.di.module
 
-import app.web.relive.data.products.remote.ProductsApi
+import app.web.relive.data.products.remote.DrinkApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun products(retrofit: Retrofit): ProductsApi =
-        retrofit.create(ProductsApi::class.java)
+    fun products(retrofit: Retrofit): DrinkApi =
+        retrofit.create(DrinkApi::class.java)
 
 }

@@ -1,15 +1,15 @@
-package app.web.relive.presentation.alcoholiccocktails.products.alcoholicCocktailList
+package app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicList
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import app.web.relive.domain.products.usecase.GetAlcoholicDrinkParams
-import app.web.relive.domain.products.usecase.GetAlcoholicDrinkUseCase
+import app.web.relive.domain.products.usecase.GetNonAlcoholicDrinkParams
+import app.web.relive.domain.products.usecase.GetNonAlcoholicDrinkUseCase
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.RecyclerItem
 import app.web.relive.presentation.alcoholiccocktails.base.viewmodel.BaseViewModel
-import app.web.relive.presentation.alcoholiccocktails.products.entity.AlcoholicDrinkMapper
+import app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +18,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlcoholicCocktailListViewModel @Inject constructor(
-    private val getAlcoholicDrinkUseCase: GetAlcoholicDrinkUseCase,
+class NonAlcoholicCocktailListViewModel @Inject constructor(
+    private val getNonAlcoholicDrinkUseCase: GetNonAlcoholicDrinkUseCase,
     private val savedStateHandle: SavedStateHandle,
 ) : BaseViewModel() {
 
@@ -33,14 +33,14 @@ class AlcoholicCocktailListViewModel @Inject constructor(
     }
 
     private fun getProductsByCoroutinePath(ids: String) =
-        getAlcoholicDrinkUseCase(GetAlcoholicDrinkParams(ids = ids))
+        getNonAlcoholicDrinkUseCase(GetNonAlcoholicDrinkParams(ids = ids))
             .cachedIn(viewModelScope)
 
     private fun getProductsBaseOnPath(ids: String) {
         viewModelScope.launch {
             _productsListByCoroutine.value = getProductsByCoroutinePath(ids).first()
                 .map { drink ->
-                    AlcoholicDrinkMapper().mapLeftToRight(drink)
+                    NonAlcoholicDrinkMapper().mapLeftToRight(drink)
                 }
         }
     }

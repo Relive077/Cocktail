@@ -102,4 +102,5 @@ dependencies {
     androidTestImplementation(Depends.Libraries.espresso_core)
 
     implementation(project(":domain"))
+    implementation(project(":presentation:alcoholicCocktails"))
 }

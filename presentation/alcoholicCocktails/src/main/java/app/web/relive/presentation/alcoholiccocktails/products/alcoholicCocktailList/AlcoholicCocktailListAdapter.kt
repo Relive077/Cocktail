@@ -3,9 +3,9 @@ package app.web.relive.presentation.alcoholiccocktails.products.alcoholicCocktai
 import android.view.View
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.BasePagedListAdapter
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.RecyclerItem
-import app.web.relive.presentation.alcoholiccocktails.products.entity.DrinkCell
+import app.web.relive.presentation.alcoholiccocktails.products.entity.AlcoholicDrinkCell
 
 class AlcoholicCocktailListAdapter(onItemClick: (RecyclerItem, View) -> Unit) : BasePagedListAdapter(
-    DrinkCell,
+    AlcoholicDrinkCell,
     onItemClick = onItemClick
 )

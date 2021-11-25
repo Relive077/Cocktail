@@ -1,4 +1,4 @@
-package app.web.relive.presentation.alcoholiccocktails.products.alcoholicCocktailList
+package app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicList
 
 import android.os.Bundle
 import android.view.View
@@ -12,26 +12,26 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 import app.web.relive.domain.base.Failure
-import app.web.relive.presentation.alcoholiccocktails.R
+import app.web.relive.presentation.nonalcoholiccocktails.R
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.LoadingStateAdapter
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.RecyclerItem
-import app.web.relive.presentation.alcoholiccocktails.databinding.FragmentAlcoholicCocktailListBinding
 import app.web.relive.presentation.alcoholiccocktails.extension.*
-import app.web.relive.presentation.alcoholiccocktails.products.entity.AlcoholicDrinkUI
+import app.web.relive.presentation.nonalcoholiccocktails.databinding.FragmentNonAlcoholicListBinding
+import app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkUI
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialElevationScale
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AlcoholicCocktailListFragment : Fragment(R.layout.fragment_alcoholic_cocktail_list) {
+class NonAlcoholicCocktailListFragment : Fragment(R.layout.fragment_non_alcoholic_list) {
 
-    private val binding by viewBinding(FragmentAlcoholicCocktailListBinding::bind) {
+    private val binding by viewBinding(FragmentNonAlcoholicListBinding::bind) {
         cleanUp(it)
     }
-    private val productsListViewModel: AlcoholicCocktailListViewModel by viewModels()
+    private val productsListViewModel: NonAlcoholicCocktailListViewModel by viewModels()
 
-    private val productsListAdapter: AlcoholicCocktailListAdapter by lazy {
-        AlcoholicCocktailListAdapter(::navigateToProductDetail)
+    private val productsListAdapter: NonAlcoholicCocktailListAdapter by lazy {
+        NonAlcoholicCocktailListAdapter(::navigateToProductDetail)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,7 +40,7 @@ class AlcoholicCocktailListFragment : Fragment(R.layout.fragment_alcoholic_cockt
         setupRecycler()
     }
 
-    private fun cleanUp(binding: FragmentAlcoholicCocktailListBinding?) {
+    private fun cleanUp(binding: FragmentNonAlcoholicListBinding?) {
         binding?.productListRecyclerView?.adapter = null
     }
 
@@ -99,9 +99,9 @@ class AlcoholicCocktailListFragment : Fragment(R.layout.fragment_alcoholic_cockt
     }
 
     private fun navigateToProductDetail(item: RecyclerItem, view: View) {
-        val itemUI = item as AlcoholicDrinkUI
+        val itemUI = item as NonAlcoholicDrinkUI
         val action =
-            AlcoholicCocktailListFragmentDirections.navigateToAlcoholicCocktailDetailFragment(itemUI)
+            NonAlcoholicCocktailListFragmentDirections.navigateToNonAlcoholicDetailFragment(itemUI)
         val extras = FragmentNavigatorExtras(
             view to itemUI.id.toString()
         )

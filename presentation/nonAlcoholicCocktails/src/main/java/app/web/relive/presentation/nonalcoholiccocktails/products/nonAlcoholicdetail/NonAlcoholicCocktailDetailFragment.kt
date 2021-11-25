@@ -1,23 +1,22 @@
-package app.web.relive.presentation.alcoholiccocktails.products.productdetail
+package app.web.relive.presentation.nonalcoholiccocktails.products.nonAlcoholicdetail
 
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import app.web.relive.presentation.alcoholiccocktails.R
-import app.web.relive.presentation.alcoholiccocktails.databinding.FragmentAlcoholicCocktailDetailBinding
 import app.web.relive.presentation.alcoholiccocktails.extension.load
-
+import app.web.relive.presentation.nonalcoholiccocktails.R
 import app.web.relive.presentation.alcoholiccocktails.extension.viewBinding
+import app.web.relive.presentation.nonalcoholiccocktails.databinding.FragmentNonAlcoholicDetailBinding
 import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_alcoholic_cocktail_detail) {
+class NonAlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_non_alcoholic_detail) {
 
-    private val binding by viewBinding(FragmentAlcoholicCocktailDetailBinding::bind)
+    private val binding by viewBinding(FragmentNonAlcoholicDetailBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,7 +24,7 @@ class AlcoholicCocktailDetailFragment : Fragment(R.layout.fragment_alcoholic_coc
     }
 
     private fun setupUI() {
-        val safeArgs: AlcoholicCocktailDetailFragmentArgs by navArgs()
+        val safeArgs: NonAlcoholicCocktailDetailFragmentArgs by navArgs()
         val product = safeArgs.productDetailDrinkUI
 
         setSharedElementTransitionOnEnter()
