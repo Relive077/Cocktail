@@ -94,6 +94,11 @@ dependencies {
     implementation(Depends.Libraries.glide)
     kapt(Depends.Libraries.glide_compiler)
     implementation(Depends.Libraries.lottie)
+    //room
+    implementation(Depends.Libraries.room_runtime)
+    implementation(Depends.Libraries.room_compiler)
+    implementation(Depends.Libraries.room_common)
+    implementation(Depends.Libraries.room_ktx)
     //test
     androidTestImplementation(Depends.Libraries.test_runner)
     androidTestImplementation(Depends.Libraries.test_rules)

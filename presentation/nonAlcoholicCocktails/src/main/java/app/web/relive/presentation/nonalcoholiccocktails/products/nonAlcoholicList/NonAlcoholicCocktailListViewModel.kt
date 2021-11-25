@@ -9,7 +9,13 @@ import app.web.relive.domain.products.usecase.GetNonAlcoholicDrinkParams
 import app.web.relive.domain.products.usecase.GetNonAlcoholicDrinkUseCase
 import app.web.relive.presentation.alcoholiccocktails.base.adapter.RecyclerItem
 import app.web.relive.presentation.alcoholiccocktails.base.viewmodel.BaseViewModel
+import app.web.relive.presentation.alcoholiccocktails.local.AlcoholicCocktailDao
+import app.web.relive.presentation.alcoholiccocktails.local.AlcoholicDrinkUIToAlcoholicCocktailDbMapper
+import app.web.relive.presentation.alcoholiccocktails.local.NonAlcoholicCocktailDao
+import app.web.relive.presentation.alcoholiccocktails.products.entity.AlcoholicDrinkUI
 import app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkMapper
+import app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkUI
+import app.web.relive.presentation.nonalcoholiccocktails.products.local.NonAlcoholicDrinkUIToNonAlcoholicCocktailDbMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,6 +26,7 @@ import javax.inject.Inject
 @HiltViewModel
 class NonAlcoholicCocktailListViewModel @Inject constructor(
     private val getNonAlcoholicDrinkUseCase: GetNonAlcoholicDrinkUseCase,
+    private val nonAlcoholicCocktailDao: NonAlcoholicCocktailDao,
     private val savedStateHandle: SavedStateHandle,
 ) : BaseViewModel() {
 
@@ -30,6 +37,14 @@ class NonAlcoholicCocktailListViewModel @Inject constructor(
 
     init {
         getProductsBaseOnPath("")
+    }
+
+    fun saveNonAlcoholicDrink(nonAlcoholicDrinkUI: NonAlcoholicDrinkUI) {
+        viewModelScope.launch {
+            nonAlcoholicCocktailDao.insertNonAlcoholicDrinkList(
+                NonAlcoholicDrinkUIToNonAlcoholicCocktailDbMapper().mapLeftToRight(nonAlcoholicDrinkUI)
+            )
+        }
     }
 
     private fun getProductsByCoroutinePath(ids: String) =

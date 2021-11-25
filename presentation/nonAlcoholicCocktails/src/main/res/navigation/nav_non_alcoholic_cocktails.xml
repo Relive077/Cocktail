@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_non_alcoholic_detail">
 
         <argument
-            android:name="productDetailDrinkUI"
+            android:name="productDetailNonAlcoholicDrinkUI"
             app:argType="app.web.relive.presentation.nonalcoholiccocktails.products.entity.NonAlcoholicDrinkUI" />
 
 

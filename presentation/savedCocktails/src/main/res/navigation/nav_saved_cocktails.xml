@@ -9,18 +9,6 @@
         android:id="@+id/savedCocktailListFragment"
         android:name="app.web.relive.presentation.savedcocktails.savedCocktailList.SavedCocktailListFragment"
         tools:layout="@layout/fragment_saved_cocktail_list">
-
-        <action
-            android:id="@+id/navigateToSavedCocktailDetailFragment"
-            app:destination="@id/savedCocktailDetailFragment" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/savedCocktailDetailFragment"
-        android:name="app.web.relive.presentation.savedcocktails.savedCocktailDetail.SavedCocktailDetailFragment"
-        tools:layout="@layout/fragment_saved_cocktail_detail">
-
     </fragment>
 
 </navigation>

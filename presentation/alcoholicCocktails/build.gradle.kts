@@ -90,6 +90,11 @@ dependencies {
     implementation(Depends.Libraries.autodispose)
     implementation(Depends.Libraries.autodispose_android)
     implementation(Depends.Libraries.autodispose_android_arch)
+    //room
+    implementation(Depends.Libraries.room_runtime)
+    implementation(Depends.Libraries.room_compiler)
+    implementation(Depends.Libraries.room_common)
+    implementation(Depends.Libraries.room_ktx)
     //ui
     implementation(Depends.Libraries.glide)
     kapt(Depends.Libraries.glide_compiler)
@@ -102,4 +107,5 @@ dependencies {
     androidTestImplementation(Depends.Libraries.espresso_core)
 
     implementation(project(":domain"))
+
 }

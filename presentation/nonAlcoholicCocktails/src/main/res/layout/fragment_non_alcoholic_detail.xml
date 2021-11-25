@@ -51,4 +51,17 @@
         app:layout_constraintTop_toBottomOf="@+id/productDetailImv"
         tools:text="1" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveFab"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_save"
+        app:fabCustomSize="56dp"
+        app:tint="?android:attr/textColorPrimaryInverse" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
