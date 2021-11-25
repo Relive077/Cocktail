@@ -22,6 +22,7 @@ Tech Stack Used:
  - Dark/Light Theme - Support dark/light themes
  - DataStore - Data storage solution that allows you to store key-value pairs or typed objects
 
+Screenshots
 
 ![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507670-1029a013-ea6e-48c2-ae17-9e9b2ff3f41a.png)
 ![NonAlcoholicCocktailDetailFragment](https://user-images.githubusercontent.com/87356177/143507674-b0970792-028a-462a-b77d-7d350b52fe6b.png)
