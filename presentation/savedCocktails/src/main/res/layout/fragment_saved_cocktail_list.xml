@@ -12,7 +12,7 @@
         android:text="Saved Non Alcoholic Cocktails"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_margin="5dp"
+        android:layout_margin="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +34,7 @@
         android:text="Saved Alcoholic Cocktails"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_margin="5dp"
+        android:layout_margin="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/productListRecyclerView" />
 

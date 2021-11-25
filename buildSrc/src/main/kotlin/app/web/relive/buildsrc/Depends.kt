@@ -41,6 +41,7 @@ object Depends {
         const val dataStorePreferenceVersion = "1.0.0"
         const val roomVersion = "2.2.4"
         const val paletteVersion = "28.0.0"
+        const val glidePaletteVersion = "2.1.2"
 
         const val mockitoKotlinVersion = "2.2.0"
         const val mockitoCoreVersion = "3.11.2"
@@ -155,6 +156,7 @@ object Depends {
         const val room_common = "androidx.room:room-common:${Versions.roomVersion}"
         const val room_ktx = "androidx.room:room-ktx:${Versions.roomVersion}"
         const val palette_v7 = "com.android.support:palette-v7:${Versions.paletteVersion}"
+        const val glide_palette = "com.github.florent37:glidepalette:${Versions.glidePaletteVersion}"
     }
 
     object Environments {

@@ -42,12 +42,12 @@ class SavedCocktailListFragment : Fragment(R.layout.fragment_saved_cocktail_list
         super.onViewCreated(view, savedInstanceState)
 
         productsListViewModel.savedAlcoholDrinks.observe(viewLifecycleOwner, Observer {
-            binding.productListRecyclerView2.layoutManager = LinearLayoutManager(this.requireContext())
+            binding.productListRecyclerView2.layoutManager = LinearLayoutManager(this.requireContext(),LinearLayoutManager.HORIZONTAL,false)
             binding.productListRecyclerView2.adapter = SavedAlcoholicCocktailListAdapter(it)
         })
 
         productsListViewModel.savedNonAlcoholDrinks.observe(viewLifecycleOwner, Observer {
-            binding.productListRecyclerView.layoutManager = LinearLayoutManager(this.requireContext())
+            binding.productListRecyclerView.layoutManager = LinearLayoutManager(this.requireContext(),LinearLayoutManager.HORIZONTAL,false)
             binding.productListRecyclerView.adapter = SavedNonAlcoholicCocktailListAdapter(it)
         })
 

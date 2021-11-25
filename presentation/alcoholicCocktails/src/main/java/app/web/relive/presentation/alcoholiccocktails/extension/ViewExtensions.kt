@@ -1,15 +1,19 @@
 package app.web.relive.presentation.alcoholiccocktails.extension
 
 import android.app.Activity
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat.startPostponedEnterTransition
 import app.web.relive.presentation.alcoholiccocktails.R
 import app.web.relive.presentation.alcoholiccocktails.base.util.GlideApp
 import app.web.relive.presentation.alcoholiccocktails.exception.ReactiveClickException
+import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -78,6 +82,7 @@ fun ImageView.load(
 
     glideRequest.into(this)
 }
+
 
 fun View.setOnReactiveClickListener(windowDuration: Long = 500, action: (() -> Unit)?): Disposable =
     this.clicks()
