@@ -1,6 +1,7 @@
 Cocktail is a fully kotlin written android app based on modularized MVVM design architecture.
 
-Tech Stack Used:
+**Tech Stack Used:**
+
  - Coroutines - A concurrency design pattern library
  - Flow - Built on top of coroutines and is stream of data that can be computed asynchronously
  - Hilt - Dependency Injection framework
@@ -22,7 +23,7 @@ Tech Stack Used:
  - Dark/Light Theme - Support dark/light themes
  - DataStore - Data storage solution that allows you to store key-value pairs or typed objects
 
-Screenshots
+**Screenshots**
 
 ![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507670-1029a013-ea6e-48c2-ae17-9e9b2ff3f41a.png)
 ![NonAlcoholicCocktailDetailFragment](https://user-images.githubusercontent.com/87356177/143507674-b0970792-028a-462a-b77d-7d350b52fe6b.png)
