@@ -27,6 +27,16 @@ Cocktail is a fully kotlin written android app based on modularized MVVM design 
  - Dark/Light Theme - Support dark/light themes
  - DataStore - Data storage solution that allows you to store key-value pairs or typed objects
 
+**Modules**
+
+ - App Module: Application Class and Dependency Injection
+ - Data Module: Remote Paging Data Source and Repository
+ - Domain Module: Use Cases
+ - Presentation Module: Main Activity with Datastore and Bottom Nav Bar directing to following user flows:  
+     - Non Alcoholic Cocktails: List and Detail Fragment (With Save Feature)
+     - Alcoholic Cocktails: List and Detail Fragment (With Save Feature)
+     - Saved Cocktails: List Fragment
+
 **Screenshots**
 
 ![AlcoholicCocktailListFragment](https://user-images.githubusercontent.com/87356177/143507670-1029a013-ea6e-48c2-ae17-9e9b2ff3f41a.png)
